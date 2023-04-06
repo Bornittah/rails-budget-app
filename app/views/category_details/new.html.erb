@@ -1,0 +1,28 @@
+<section class='signin-container'>
+<h1>Add transition to the category</h1>
+<%= form_with url: category_category_details_path(categories_id: @category.id), scope: :transition do |form| %>
+    <div class="form-div" >
+
+  <div class='form-item'>
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class:"input-form" %>
+</div>
+
+    <div class='form-item'>
+    <%= form.label :amount, class:"form-label" %><br>
+    <%= form.number_field :amount , class:"input-form", required: true, placeholder: '1',  min: 1%><br>
+  </div>
+
+  <div class='form-item'>
+    <%= form.label :category, class: 'form-label' %><br>
+    <%= form.select :category_id, @category.users.categories.map {|category| [category.name, category.id]}, { include_blank: true }, class: "input-form" %>
+<br>
+    </div>
+  <div class='form-item'>
+    <div>
+    <%= form.submit "Add", class:"form-button" %>
+    </div>
+    </div>
+  <%end%>
+  <%= link_to 'back', category_path(@category) %>
+<section>

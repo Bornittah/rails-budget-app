@@ -1,0 +1,18 @@
+<section class='signin-container'>
+<div class='show'>
+  <div class='category-info'>
+  <img src='<%= @category.icon %>' alt='category icon' class='card-img' />
+  <h1 class='category-name'> <%= @category.name %></h1>
+  </div>
+  <% @category_details.each do |detail|%>
+  <div class='transaction'>
+  <h1> <%= detail.name %></h1>
+  <p> <%= number_to_currency(detail.amount) %></p>
+  </div>
+  <% end %>
+  <h4 class='btn'>Total spent:$ <span> <%= @category.category_details.sum(:amount) %></span></h4>
+  </div>
+  <%= link_to 'Add new transaction', new_category_category_detail_path(@category), class:"btn" %>
+  <%= link_to 'back', categories_path %>
+</section>
+
