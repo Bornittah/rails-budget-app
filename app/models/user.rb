@@ -6,5 +6,4 @@ class User < ApplicationRecord
 
   has_many :categories
   has_many :category_details
-
 end
