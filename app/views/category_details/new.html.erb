@@ -1,0 +1,25 @@
+ <%= render "menu/menu" %>
+<section class='container'>
+<div class="d-flex justify-content-between mb-8">
+  <a href="<%= categories_path %>" class="link-primary text-decoration-none">Back</a>
+  <h2><%= @category.name %></h2>
+</div>
+<h1>Add transaction</h1>
+<%= bootstrap_form_with url: category_category_details_path(categories_id: @category.id), scope: :transition do |form| %>
+    <div class="form-div" >
+
+  <div class='form-item'>
+      <%= form.text_field :name, class:"input-form" %>
+</div>
+
+    <div class='form-item'>
+    <%= form.number_field :amount , class:"input-form", required: true, placeholder: '1',  min: 1%><br>
+  </div>
+
+  <div class='form-item'>
+    <div>
+    <%= form.submit "Add transaction", class:"btn btn-primary" %>
+    </div>
+    </div>
+  <%end%>
+<section>

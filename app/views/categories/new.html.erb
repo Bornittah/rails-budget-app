@@ -1,0 +1,16 @@
+ <%= render "menu/menu" %>
+<section class= "container mb-3">
+<div class="d-flex justify-content-between mb-8">
+  <a href="<%= categories_path %>" class="link-primary text-decoration-none">Back</a>
+  <h2>Category</h2>
+</div>
+<h1>Add a new category.</h1>
+<%= bootstrap_form_with model: @category, url: categories_path, method: :post, scope: :category, locals: { category: @category } do |form| %>
+      <p><%= form.text_field :name,  class: "" %></p>
+      <p><%= form.text_field :icon, class:"input-form" %></p>
+
+<%= form.submit "Add category" , class:"btn btn-lg btn-primary" %>
+  <% end %>
+
+</section>
+
