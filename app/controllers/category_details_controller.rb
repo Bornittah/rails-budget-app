@@ -13,7 +13,7 @@ class CategoryDetailsController < ApplicationController
                                                               category_id: params[:category_id]))
 
     category_id = params[:category_id]
-    @category_detail.category_id=category_id;
+    @category_detail.category_id = category_id
 
     respond_to do |format|
       format.html do
