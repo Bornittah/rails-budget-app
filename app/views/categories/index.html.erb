@@ -1,20 +1,28 @@
-<section class='category-container'>
+<section class="container">
+<div class="d-flex justify-content-between mb-8">
+  <h2>Category</h2>
+  <a href="#" class="link-primary text-decoration-none">Search</a>
+</div>
 <% if @categories.blank? %>
 <p>There is no category to show , create one!</p>
 <% else %>
 <% @categories.each do |category| %>
-<div class='card-container'>
-<img src='<%= category.icon %>' alt='category icon' class='card-img' />
-<div class='card-info'>
-<p class='category-name'><%= link_to category.name, {:action => 'show', :id => category.id } %></p>
-<p><%= category.created_at.strftime("%d %b %Y") %></p>
+<div class="card mb-4 p-3">
+  <div class="d-flex justify-content-between">
+    <p class="btn btn-info"><%= category.icon %></p>
+    <div class='card-info'>
+      <p class='category-name'><%= link_to category.name, {:action => 'show', :id => category.id } %></p>
+      <p><%= category.created_at.strftime("%d %b %Y") %></p>
+    </div>
+    <% if can? :destroy, category %>
+      <%= button_to "Delete", category_path(category), method: :delete, class: "btn btn-primary", data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
 </div>
-<% if can? :destroy, category %>
-  <%= button_to "Delete", category_path(category), method: :delete, class: "category-btn", data: { confirm: 'Are you sure?' } %>
 <% end %>
+<% end %>
+<div class="sticky-bottom mt-4 w-100">
+  <%= link_to 'Add new category', new_category_path, class:"btn btn-primary w-100 p-3" %>
 </div>
-<% end %>
-<% end %>
-<%= link_to 'Add new category', new_category_path, class:"btn" %>
 </section>
 

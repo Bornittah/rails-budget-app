@@ -1,18 +1,26 @@
-<section class='signin-container'>
-<div class='show'>
-  <div class='category-info'>
-  <img src='<%= @category.icon %>' alt='category icon' class='card-img' />
-  <h1 class='category-name'> <%= @category.name %></h1>
+<section class='container'>
+<div class="d-flex justify-content-between mb-8">
+  <a href="<%= categories_path %>" class="link-primary text-decoration-none">Back</a>
+  <h2><%= @category.name %></h2>
+  <a href="#" class="link-primary text-decoration-none">Search</a>
+</div>
+<div class="p-3">
+  <div class='card'>
+    <p class="category icon"><%= @category.icon %></p>
+    <h2 class='category-name'> <%= @category.name %></h2>
+    <h4 class='btn'>Total spent:<span> <%= number_to_currency(@category.category_details.sum(:amount)) %></span></h4>
   </div>
   <% @category_details.each do |detail|%>
-  <div class='transaction'>
-  <h1> <%= detail.name %></h1>
-  <p> <%= number_to_currency(detail.amount) %></p>
+    <div class='d-flex justify-content-between'>
+      <h2> <%= detail.name %></h2>
+      <p> <%= number_to_currency(detail.amount) %></p>
+          <%= button_to "Delete", category_category_detail_path(detail.id, detail), method: :delete, class: "btn btn-danger btn-sm" %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-  <h4 class='btn'>Total spent:$ <span> <%= @category.category_details.sum(:amount) %></span></h4>
+  
+  <div class="sticky-bottom mt-4 w-100">
+  <%= link_to 'Add new transaction', new_category_category_detail_path(@category), class:"btn btn-primary w-100 p-3" %>
   </div>
-  <%= link_to 'Add new transaction', new_category_category_detail_path(@category), class:"btn" %>
-  <%= link_to 'back', categories_path %>
 </section>
 

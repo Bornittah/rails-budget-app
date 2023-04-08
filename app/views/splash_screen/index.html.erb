@@ -1,7 +1,9 @@
 <div class="container place-content-center">
-  <h1 class="font-bold text-4xl">Budget Apps</h1>
-  <div class="flex flex-col">
-    <%= button_to "LOGIN", class: "bg-[#1da1f2] text-white ..."%>
-    <%= button_to "SIGNUP", class: "bg-blue-700"%>
+<div class="d-flex flex-column justify-content-center align-items-center h-100 w-100">
+  <h1 class="font-bold text-4xl">Budget App</h1>
+  <div class="d-flex flex-column">
+  <%= link_to 'LOGIN', new_user_session_path , class: 'btn btn-primary mt-3 w-100' %>
+  <%= link_to 'SIGN UP', new_user_registration_path , class: 'btn btn-secondary mt-3 w-100' %>
   </div>
+</div>
 </div>

@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+  <div class="container">
+   <%= link_to "Budget App", root_path(), :class=> "navbar-brand me-2 text-primary" %>
+
+      <div class="d-flex align-items-end">
+       <% if(user_signed_in?) %>
+          <%= button_to "Sign out", destroy_user_session_path, :class => 'btn btn-danger me-3', :method => :delete, data: {turbo: false}%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -9,6 +9,12 @@ gem 'cancancan'
 
 gem 'pg'
 
+# bootstrap
+gem 'bootstrap', '~> 5.2.2'
+
+# Bootstrap forms
+gem 'bootstrap_form', '~> 5.1'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
@@ -28,7 +34,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 
 # add tailwind css
-gem 'tailwindcss-rails'
+# gem 'tailwindcss-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -53,6 +59,7 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
+gem "font-awesome-sass", "~> 6.4.0"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -80,3 +87,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "cssbundling-rails", "~> 1.1"
