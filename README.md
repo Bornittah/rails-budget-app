@@ -59,7 +59,7 @@
 
 ### Live Demo <a name="live-demo"></a>
 
-Coming soon
+Click <a href="https://www.loom.com/share/45bbb83f0daa433cab0fd26b1d19a3b9">here</a> to see the demo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
