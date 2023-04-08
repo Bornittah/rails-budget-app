@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.new(name: 'admin', email: 'app@gmail.com', password: '123456') }
+  let(:user) { User.new(email: 'app@gmail.com', password: '123456') }
 
   before { user.save }
 
@@ -10,13 +10,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'check for the validations' do
-    it 'not valid withour without name' do
-      user.name = ''
-      expect(user).to_not be_valid
-    end
-
-    it 'have correct name' do
-      user.name = 'admin'
+    it 'have correct email' do
+      user.email = 'app@gmail.com'
       expect(user).to be_valid
     end
 

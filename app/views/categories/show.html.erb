@@ -1,3 +1,4 @@
+ <%= render "menu/menu" %>
 <section class='container'>
 <div class="d-flex justify-content-between mb-8">
   <a href="<%= categories_path %>" class="link-primary text-decoration-none">Back</a>
@@ -14,7 +15,7 @@
     <div class='d-flex justify-content-between'>
       <h2> <%= detail.name %></h2>
       <p> <%= number_to_currency(detail.amount) %></p>
-          <%= button_to "Delete", category_category_detail_path(detail.id, detail), method: :delete, class: "btn btn-danger btn-sm" %>
+      <%= button_to "Delete", category_category_detail_path(detail.id, detail), method: :delete, class: "btn btn-danger btn-sm" %>
     </div>
     <% end %>
   </div>

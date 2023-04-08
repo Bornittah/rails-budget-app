@@ -29,11 +29,12 @@ class CategoryDetailsController < ApplicationController
   end
 
   def destroy
+    # @category = Category.find(params[:category_id])
     @category_detail = CategoryDetail.find(params[:id])
     @category_detail.destroy
 
     respond_to do |format|
-      format.html { redirect_to category_url, notice: 'Transaction deleted successfully.' }
+      format.html { redirect_to category_detail_url, notice: 'Transaction deleted successfully.' }
     end
   end
 

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'the signin process', type: :feature do
   before :each do
-    User.create(email: 'guestuser@gmail.com', password: 'password', name: 'guestuser')
+    User.create(email: 'guestuser@gmail.com', password: 'password')
   end
   it 'signs @user in' do
     visit '/users/sign_in'

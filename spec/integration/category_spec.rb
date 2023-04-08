@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Food Index', type: :system do
+RSpec.describe 'Category Index', type: :system do
   before(:each) do
-    @user = User.create(name: 'admin', email: 'admin@gmail.com', password: '123456',
+    @user = User.create(email: 'admin@gmail.com', password: '123456',
                         password_confirmation: '123456')
 
     @category = Category.create(user_id: @user.id, name: 'pizza',
@@ -13,7 +13,6 @@ RSpec.describe 'Food Index', type: :system do
     visit new_user_registration_path
 
     sleep(1)
-    fill_in 'Name', with: @user.name
     fill_in 'Email', with: @user.email
     sleep(2)
     fill_in 'Password', with: @user.password
